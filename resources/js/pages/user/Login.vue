@@ -1,9 +1,13 @@
 <template>
-    <div class="w-96 mx-auto">
-        <input v-model="email" type="email" placeholder="email"  class="w-96 p1 mb2 border border-inherit rounded-lg">
-        <input v-model="password" type="password" placeholder="password"  class="w-96 p1 mb2 border border-inherit rounded-lg">
+    <form class="w-96 mx-auto">
+        <div>
+            <input v-model="email" type="email" placeholder="email" autocomplete="on" class="w-96 p1 mb2 border border-inherit rounded-lg">
+        </div>
+        <div>
+            <input v-model="password" type="password" placeholder="password" autocomplete="on" class="w-96 p1 mb2 border border-inherit rounded-lg">
+        </div>
         <input @click.prevent="login" type="submit" value="login" placeholder="login"  class="block float-right mx-auto w32 p-1 bg-sky-400 text-white rounded-lg">
-    </div>
+    </form>
 </template>
 
 <script>

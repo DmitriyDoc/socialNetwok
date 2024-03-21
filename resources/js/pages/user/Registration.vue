@@ -1,11 +1,11 @@
 <template>
-    <div class="w-96 mx-auto">
-        <div> <input v-model="name" type="text" placeholder="name" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
-        <div> <input v-model="email" type="email" placeholder="email"  class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
-        <div> <input v-model="password" type="password" placeholder="password" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
-        <div> <input v-model="password_confirmation" type="password" placeholder="password confirmation" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
+    <form class="w-96 mx-auto">
+        <div> <input v-model="name" type="text" placeholder="name" autocomplete="on" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
+        <div> <input v-model="email" type="email" placeholder="email"  autocomplete="on" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
+        <div> <input v-model="password" type="password" placeholder="password" autocomplete="on" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
+        <div> <input v-model="password_confirmation" type="password" placeholder="password confirmation" autocomplete="on" class="w-96 p1 mb2 border border-inherit rounded-lg"></div>
         <input @click.prevent="register" type="submit" value="register" placeholder="login" class="block float-right mx-auto w32 p-1 bg-sky-400 text-white rounded-lg">
-    </div>
+    </form>
 </template>
 
 <script>
