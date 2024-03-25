@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
 
-    protected $guarded = true;
+    protected $guarded = false;
     protected $table = 'comments';
 }

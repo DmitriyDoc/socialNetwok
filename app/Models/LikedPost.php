@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class LikedPost extends Model
 {
 
-    protected $guarded = true;
+    protected $guarded = false;
     protected $table = 'liked_posts';
 }

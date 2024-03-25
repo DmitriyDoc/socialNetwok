@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubscribeFollowing extends Model
 {
-    protected $guarded = true;
+    protected $guarded = false;
     protected $table = 'subscribe_followings';
 }
