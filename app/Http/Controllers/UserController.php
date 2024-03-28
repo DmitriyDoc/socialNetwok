@@ -12,8 +12,13 @@ class UserController extends Controller
 {
 
     public function index() {
+
         $users = User::whereNot('id', auth()->id())->get();
         return UserResource::collection($users);
+    }
+
+    public function post(User $user) {
+        return PostResource::collection($user->posts);
     }
 
 }

@@ -25,19 +25,16 @@
         </form>
         <div v-if="posts">
             <div class="mb-4 pb-4 border-b border-gray-300">Posts</div>
-            <div v-for="post in posts" class="mb-4 pb-4 border-b border-gray-300">
-                <h1 class="text-xl">{{post.title}}</h1>
-                <img class="mx-auto" v-if="post.image_url" :src="post.image_url" :alt="post.title">
-                <p>{{post.content}}</p>
-                <p class="mt-2 text-right text-sm">{{post.date}}</p>
-            </div>
+            <Post v-for="post in posts" :post="post" ></Post>
         </div>
     </div>
 </template>
 
 <script>
+    import Post from "../../components/Post.vue";
     export default {
         name: "Personal",
+        components: {Post},
         data(){
             return {
                 content: '',

@@ -3,9 +3,11 @@
         <div v-if="users">
             <div class="mb-6 pb-6 border-b border-gray-300">Users</div>
             <div v-for="user in users" class="mb-4 pb-4 border-b border-gray-300">
-                <p>{{user.id}}</p>
-                <p>{{user.name}}</p>
-                <p>{{user.email}}</p>
+                <router-link :to="{name: 'user.show', params: {id:user.id}}">
+                    <p>{{user.id}}</p>
+                    <p>{{user.name}}</p>
+                    <p>{{user.email}}</p>
+                </router-link>
             </div>
         </div>
     </div>
@@ -14,7 +16,7 @@
 <script>
     export default {
         name: "Index",
-        data(){
+        data() {
             return {
                 users: [],
             }
@@ -23,7 +25,7 @@
             this.getUsers();
         },
         methods: {
-            getUsers(){
+            getUsers() {
                 axios.get('/api/users')
                     .then(res => {
                         this.users = res.data.data;

@@ -12,24 +12,29 @@ const router = createRouter({
             component: () => import ('../pages/Page.vue')
         },
         {
-            path: '/user/login',
+            path: '/users/login',
             component: () => import ('../pages/user/Login.vue'),
             name: 'user.login'
         },
         {
-            path: '/user/registration',
+            path: '/users/registration',
             component: () => import ('../pages/user/Registration.vue'),
             name: 'user.registration'
         },
         {
-            path: '/user/personal',
+            path: '/users/personal',
             component: () => import ('../pages/user/Personal.vue'),
             name: 'user.personal'
         },
         {
-            path: '/user/index',
+            path: '/users/index',
             component: () => import ('../pages/user/Index.vue'),
             name: 'user.index'
+        },
+        {
+            path: '/users/:id',
+            component: () => import ('../pages/user/Show.vue'),
+            name: 'user.show'
         }
     ]
 });
