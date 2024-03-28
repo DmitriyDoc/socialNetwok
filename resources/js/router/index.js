@@ -25,6 +25,11 @@ const router = createRouter({
             path: '/user/personal',
             component: () => import ('../pages/user/Personal.vue'),
             name: 'user.personal'
+        },
+        {
+            path: '/user/index',
+            component: () => import ('../pages/user/Index.vue'),
+            name: 'user.index'
         }
     ]
 });
