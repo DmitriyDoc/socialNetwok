@@ -11,12 +11,11 @@
     import Post from "../../components/Post.vue";
 
     export default {
-        name: "Show",
+        name: "Feed",
         components: {Post},
         data() {
             return {
                 posts: [],
-                user_id: this.$route.params.id,
             }
         },
         mounted() {
@@ -24,7 +23,7 @@
         },
         methods: {
             getPosts() {
-                axios.get(`/api/users/${this.user_id}/posts`)
+                axios.get(`/api/users/following_posts`)
                     .then(res => {
                         this.posts = res.data.data;
                     });

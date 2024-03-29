@@ -32,10 +32,15 @@ const router = createRouter({
             name: 'user.index'
         },
         {
-            path: '/users/:id',
+            path: '/users/:id/show',
             component: () => import ('../pages/user/Show.vue'),
             name: 'user.show'
-        }
+        },
+        {
+            path: '/users/feed',
+            component: () => import ('../pages/user/Feed.vue'),
+            name: 'user.feed'
+        },
     ]
 });
 
