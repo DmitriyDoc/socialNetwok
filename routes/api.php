@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/posts',[\App\Http\Controllers\PostController::class,'index']);
     Route::post('/posts',[\App\Http\Controllers\PostController::class,'store']);
     Route::post('/post_images',[\App\Http\Controllers\PostImageController::class,'store']);
+    Route::get('/posts/{post}/liked',[\App\Http\Controllers\PostController::class,'liked']);
 
 });
 

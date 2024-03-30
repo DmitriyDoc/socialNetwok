@@ -11,12 +11,19 @@ class Post extends Model
     protected $guarded = false;
     protected $table = 'posts';
 
-    protected $with = ['image'];
+    protected $with = ['image','likedUsers'];
 
-    public function image() {
+    public function image()
+    {
         return $this->HasOne(PostImage::class,'post_id','id')->whereNotNull('post_id');
     }
-    public function getDateAttribute(){
+    public function likedUsers()
+    {
+        return$this->belongsToMany(User::class, 'liked_posts', 'post_id', 'user_id');
+    }
+
+    public function getDateAttribute()
+    {
         return $this->created_at->diffForHumans();
     }
 }
